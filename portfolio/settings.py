@@ -28,6 +28,18 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'portfolio',
+        'HOST': 'postgres',
+        'PORT': 5432,
+        'USER': 'portfolio',
+        'PASSWORD': 'portfolio',
+    }
+}
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,14 +49,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    'sorl.thumbnail',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.facebook',
     'import_export',
-    'django_filters',
+
 ]
 
 MIDDLEWARE = [
@@ -76,17 +82,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'portfolio.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
 
 # Password validation
@@ -126,14 +121,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'portfolio',
-        'HOST': 'postgres',
-        'PORT': 5432,
-        'USER': 'portfolio',
-        'PASSWORD': 'portfolio',
-    }
-}

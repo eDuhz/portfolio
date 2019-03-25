@@ -7,6 +7,11 @@ RUN apt-get update && apt-get install -y \
     # Postgres
     libpq-dev \
     postgresql-client \
+    # GeoDjango deps
+    binutils \
+    libgeoip1 \
+    libproj-dev \
+    gdal-bin \
     # MagickWand
     libmagickwand-dev \
     && rm -rf /var/lib/apt/lists/*
